@@ -1,8 +1,10 @@
 package com.sharkBytesLab.premiumDictionary
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
-import com.chaquo.python.PyObject
+import androidx.appcompat.app.AppCompatActivity
+import com.applovin.sdk.AppLovinSdk
+import com.applovin.sdk.AppLovinSdkConfiguration
 import com.chaquo.python.Python
 import com.chaquo.python.android.AndroidPlatform
 import com.sharkBytesLab.premiumDictionary.databinding.ActivityMainScreenBinding
@@ -16,6 +18,7 @@ class MainScreen : AppCompatActivity() {
         binding = ActivityMainScreenBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        init()
         setListeners()
 
     }
@@ -42,6 +45,21 @@ class MainScreen : AppCompatActivity() {
             }
 
         }
+
+        binding.menu.setOnClickListener {
+            val i = Intent(applicationContext, MenuActivity::class.java)
+            startActivity(i)
+        }
+
+    }
+
+    private fun init()
+    {
+        AppLovinSdk.getInstance( this ).setMediationProvider( "max" )
+        AppLovinSdk.getInstance( this ).initializeSdk({ configuration: AppLovinSdkConfiguration ->
+            // AppLovin SDK is initialized, start loading ads
+            binding.applovinAdMain.loadAd()
+        })
     }
 
 }

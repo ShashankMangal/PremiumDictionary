@@ -16,6 +16,18 @@
         android:theme="@style/Theme.PremiumDictionary"
         tools:targetApi="31">
         <activity
+            android:name=".TermsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PrivacyPolicyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RewardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MenuActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainScreen"
             android:exported="true">
             <intent-filter>
@@ -26,7 +38,12 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
+
+        <meta-data
+            android:name="applovin.sdk.key"
+            android:value="Z_NWeH7hrw4X3w8eevCkEchTuTU0tZ1qm1wuQz7N29ywvtPlM18i_3iGex4Mf1hueA8_WM595FKzvCmiwUzRTA" />
+
     </application>
 
 </manifest>

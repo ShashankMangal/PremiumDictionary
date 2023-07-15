@@ -18,13 +18,24 @@
         app:civ_border_width="1dp"
         app:civ_border_color="@color/black"/>
 
+    <ImageView
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_margin="25dp"
+        android:src="@drawable/round_menu_24"
+        app:tint="@color/black"
+        android:id="@+id/menu"
+        />
+
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:background="@color/theme"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/applovinAdMain"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/profile_image">
@@ -86,5 +97,16 @@
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.applovin.mediation.ads.MaxAdView
+        android:id="@+id/applovinAdMain"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        xmlns:maxads="http://schemas.applovin.com/android/1.0"
+        maxads:adUnitId="54b6cd8245ebe0b5"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+    </com.applovin.mediation.ads.MaxAdView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
